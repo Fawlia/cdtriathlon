@@ -1,9 +1,8 @@
 <?php
 /*
-Template Name: accueil
+Template Name: post_grid
 */
 ?>
-
 <?php wp_head(); ?>
 
 <?php if ( !function_exists('get_field')) return; ?>
@@ -129,19 +128,22 @@ Template Name: accueil
             <div class="row">
                 <?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3) ); ?>
                 <?php if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                <div class=" cards col-lg-4 col-md-12 col-xs-12" style="width: 20rem;">
-                    <div id="preview_index" class="card-img-top" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;"></div>
-                    <div class="card-block">
-                        <h4 class="card-title col-lg-12 text-center">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h4>
-                        <p class="card-text resume">
-                            <?php echo get_the_excerpt(); ?>
-                        </p>
-                    </div>
-                </div>
+             	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 card">
+					<div class="border">
+                      <div class="grid">
+                       		<a href="<?php the_permalink()?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>); background-size:cover;background-position:center; background-repeat:no-repeat"></a>
+                       </div>
+                       
+                 
+                        
+                        <div class="card_inner">
+							<h3 class="title_card"><?php the_title(); ?></h3>
+							<p class="date"><?php the_time(get_option('date_format')); ?></p>
+							<p class="desc"><?php echo get_the_excerpt(); ?></p>
+							<a href="<?php the_permalink(); ?>">Lire la suite...</a>
+						</div>    				
+					</div>
+				</div>
                 <?php endwhile; wp_reset_query(); else: ?>
                 <p>Désoler nous n'avons pas trouvé d'article..</p>
                 <?php endif; ?>

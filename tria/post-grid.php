@@ -8,7 +8,7 @@ Template Name: post_grid
 <main>
 	
 	<section class="container-fluid">
-		<div class="container">
+		<div id="post_grid" class="container">
 		
 			<div class="row justify-content-between">
 			<?php
@@ -33,7 +33,7 @@ Template Name: post_grid
                         
                         <div class="card_inner">
 							<h3 class="title_card"><?php the_title(); ?></h3>
-							<p class="date"><?php the_date();?></p>
+							<p class="date"><?php the_time(get_option('date_format')); ?></p>
 							<p class="desc"><?php echo get_the_excerpt(); ?></p>
 							<a href="<?php the_permalink(); ?>">Lire la suite...</a>
 						</div>    				

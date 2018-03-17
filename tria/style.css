@@ -408,6 +408,7 @@ h1 {
 }
 .last_news .titre{
 	height: 15px;
+	margin-bottom: 20px;
 }
 .last_news .gauche {
 	height: 100%;
@@ -510,6 +511,7 @@ footer {
 	padding-left: 20px;
 	color: white;
 	background-color: rgba(12, 12, 12, .863);
+	margin-top: 50px;
 }
 
 #foot {
@@ -537,7 +539,9 @@ footer {
 	border-left: 5px solid #FEC722;
 	border-right: 5px solid #FEC722;
 	border-top: 5px solid #FEC722;
-	background-size:cover; background-repeat:no-repeat; background-position:bottom;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
 	margin-bottom: 75px;
 }
 
@@ -601,6 +605,7 @@ footer {
 	padding: 0;
 	border: 15px solid transparent;
 	background-clip:padding-box;
+
 }
 
 .border{
@@ -617,22 +622,44 @@ footer {
 }
 
 .card_inner {
-	padding:40px;
+	padding:30px;
 }
 
 .date{
-	font-family: "rlwl";
+	font-family: "raleway";
 	font-size: 11px;
 	color: #8c8c8c;
 	margin-bottom: 15px;
 }
 
 .desc{
-	font-family: "rlwl";
+	font-family: "raleway";
 	font-size: 13px;
 	color: #8c8c8c;
 	margin-bottom: 5px;
 	line-height: 25px;
 	text-align: justify;
+}
+
+.grid a{
+	display: block;
+	width: auto;
+	height:250px;
+}
+.grid{
+		border-left: 5px solid #FEC722;
+	border-right: 5px solid #FEC722;
+	border-top: 5px solid #FEC722;
+}
+
+.title_card{
+	font-family: "raleway_semi";
+	font-size: 18px;
+	color: #1a1a1a;
+	margin-bottom: 10px;
+}
+
+#post_grid {
+	margin-top: 100px;
 }
 
