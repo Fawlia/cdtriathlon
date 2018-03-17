@@ -19,42 +19,7 @@
 			<button class="menu-burger">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
-			<ul class="menu">
-				<li>
-					<a href="">Accueil </a>
-				</li>
-				<li>
-					<a href="">Actualités</a>
-				</li>
-				<li>
-					<a href="">Stages</a>
-				</li>
-				<li>
-					<a href="">Challenges</a>
-				</li>
-				<li>
-					<a href="">Class-tri</a>
-				</li>
-				<li>
-					<a href="">Matériels</a>
-				</li>
-				<li>
-					<a href="">Contact
-                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </a>
-					<ul>
-						<li>
-							<a href="">Club Vesoul</a>
-						</li>
-						<li>
-							<a href="">Club Gray</a>
-						</li>
-						<li>
-							<a href="">Club Lure</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
+			<?php wp_nav_menu( array( 'theme_location' => 'Top' ) ); ?>
 
 		</div>
 	</nav>

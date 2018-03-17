@@ -1,4 +1,12 @@
+<?php
+/*
+Template Name: accueil
+*/
+?>
+
 <?php wp_head(); ?>
+
+<?php if ( !function_exists('get_field')) return; ?>
 
 <body>
     <nav>
@@ -8,7 +16,9 @@
             <button class="menu-burger">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
-            <ul class="menu">
+       
+          <?php wp_nav_menu( array( 'theme_location' => 'Top' ) ); ?>
+           <!-- <ul class="menu">
                 <li>
                     <a href="">Accueil </a>
                 </li>
@@ -43,7 +53,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul>-->
 
         </div>
     </nav>
@@ -112,7 +122,7 @@
     <section class="container last_news">
         <div class="titre row">
             <div class="gauche col-lg-4 col-md-4 hidden-xs"></div>
-            <div class="col-lg-4 col-md-4 text-center">Dernières actualités</div>
+			<div class="col-lg-4 col-md-4 text-center"><a href="./post-grid.php">Dernières actualités</a></div>
             <div class="droite col-lg-4 col-md-4 hidden-xs"></div>
         </div>
         <div class="container">
@@ -120,7 +130,7 @@
                 <?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3) ); ?>
                 <?php if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class=" cards col-lg-4 col-md-12 col-xs-12" style="width: 20rem;">
-                    <div class="card-img-top" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;"></div>
+                    <div id="preview_index" class="card-img-top" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;"></div>
                     <div class="card-block">
                         <h4 class="card-title col-lg-12 text-center">
                             <a href="<?php the_permalink(); ?>">

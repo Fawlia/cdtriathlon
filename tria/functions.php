@@ -25,6 +25,11 @@ function ressources() {
 
 add_action('wp_enqueue_scripts', 'ressources');
 
+// Navigation Menus
+register_nav_menus(array(
+'Top' => 'Navigation principale',
+));
+
 function wordpress_setup(){
 
 	//support des vignettes image à la une
