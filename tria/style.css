@@ -15,7 +15,6 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
-	color: white;
 	background-color: white;
 }
 
@@ -698,3 +697,103 @@ a:hover{
 	font-size: 60px;
 }
 
+.head_stage{
+	background-image: url("../tria/img/nageur.jpg");
+	background-size:cover;
+	background-position:center; 
+	background-repeat:no-repeat; 
+	height:300px;
+	width:100vw;
+}
+.head_stage h1{
+	margin-top: 100px;
+	font-size: 100px;
+	font-family: 'raleway_bold';
+	color: #FEC722;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.head_materiel{
+	background-image: url("../tria/img/nageur.jpg");
+	background-size:cover;
+	background-position:center; 
+	background-repeat:no-repeat; 
+	height:300px;
+	width:100vw;
+}
+#materiel p{
+	margin-top: 50px;
+	font-size: 20px;
+	text-align: justify;
+	
+}
+
+.head_materiel h1{
+	margin-top: 100px;
+	font-size: 100px;
+	font-family: 'raleway_bold';
+	color: #FEC722;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.head_actu{
+	background-image: url("../tria/img/nageur.jpg");
+	background-size:cover;
+	background-position:center; 
+	background-repeat:no-repeat; 
+	height:300px;
+	width:100vw;
+}
+
+.head_actu h1{
+	margin-top: 100px;
+	font-size: 100px;
+	font-family: 'raleway_bold';
+	color: #FEC722;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.head_classtri{
+	background-image: url("../tria/img/nageur.jpg");
+	background-size:cover;
+	background-position:center; 
+	background-repeat:no-repeat; 
+	height:300px;
+	width:100vw;
+	
+}
+
+.head_classtri h1{
+	margin-top: 100px;
+	font-size: 100px;
+	font-family: 'raleway_bold';
+	color: #FEC722;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	
+}
+
+#classtri h2{
+	margin-top: 80px;
+}
+
+#classtri a{
+	text-decoration: none;
+	color: blue;
+}
+#classtri a:hover{
+	text-decoration: none;
+	font-family: "raleway";	
+	text-decoration: underline;		
+}
+
+h3 {
+	font-size: 20px;
+}
+
+#regl {
+	padding-left: 40px;
+}
+
+#classtri{
+	text-align: justify;
+}

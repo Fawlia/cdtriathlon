@@ -3,6 +3,20 @@
 Template Name: post_grid
 */
 ?>
+	
+	<main>
+   <section class="container-fluid">
+  		<div class="row" >
+  			<div class="head_actu">
+  				<h1>Actualités</h1>
+  				
+  			</div>
+  			
+  			
+  			
+  		</div>
+   		
+   </section>
 
 	<?php get_header(); ?>
 	<main>

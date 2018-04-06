@@ -252,7 +252,7 @@ function cptui_register_my_cpts() {
 		"rewrite" => array( "slug" => "stage", "with_front" => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-exerpt-view",
-		"supports" => array( "title", "custom-fields" ),
+		"supports" => array( "title", "custom-fields", 'excerpt' ),
 	);
 
 	register_post_type( "stage", $args );
@@ -260,3 +260,74 @@ function cptui_register_my_cpts() {
 
 add_action( 'init', 'cptui_register_my_cpts' );
 
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'stage', 'excerpt' ); //change page with your post type slug.
+}
+// LIMITER LE RESUMER DES STAGES
+
+function excerpt($limit) {
+          $excerpt = explode(' ', get_the_excerpt(), $limit);
+          if (count($excerpt)>=$limit) {
+            array_pop($excerpt);
+            $excerpt = implode(" ",$excerpt).'...';
+          } else {
+            $excerpt = implode(" ",$excerpt);
+          } 
+          $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+          return $excerpt;
+        }
+
+        function content($limit) {
+          $content = explode(' ', get_the_content(), $limit);
+          if (count($content)>=$limit) {
+            array_pop($content);
+            $content = implode(" ",$content).'...';
+          } else {
+            $content = implode(" ",$content);
+          } 
+          $content = preg_replace('/\[.+\]/','', $content);
+          $content = apply_filters('the_content', $content); 
+          $content = str_replace(']]>', ']]&gt;', $content);
+          return $content;
+        }
+
+// FORM 7 
+
+function mod_contact7_form_content( $template, $prop ) {
+  if ( 'form' == $prop ) {
+    return implode( '', array(
+      '<div class="row">',
+        '<div class="col">',
+          '[text* your-name placeholder"Name"]',
+          '[email* your-email placeholder"Email"]',
+          '[text* your-subject placeholder"Subject"]',
+        '</div>',
+        '<div class="col">',
+          '[textarea* your-message placeholder"Message"]',
+        '</div>',
+      '</div>',
+      '<div class="row">',
+        '[submit class:btn "Send Mail"]',
+      '</div>'
+    ) );
+  } else {
+    return $template;
+  } 
+}
+add_filter(
+  ‘wpcf7_default_template’,
+  ‘mod_contact7_form_content’,
+  10,
+  2
+);
+
+function mod_contact7_form_title( $template ) {
+  $template->set_title( 'Contact us now' );
+  return $template;
+}
+
+add_filter(
+  'wpcf7_contact_form_default_pack',
+  'mod_contact7_form_title'
+);
